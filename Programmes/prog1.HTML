@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <div id="output" class="output"></div>
+    <style>
+        .output {
+            font-family: monospace;
+            /* Ensures even spacing for characters */
+            white-space: pre;
+            /* Preserves all spaces and line breaks */
+        }
+    </style>
+</head>
+
+<body>
+    <script>
+
+        // Pattern 1
+        // let n = 5;
+        // str = ''
+        // for (let i = 1; i <= n; i++) {
+        //     str = str + "*"
+        //     str = str +'<br/>'
+        // }
+        // document.write(str)
+        //-----------------------------------------------------------------------
+
+        // Pattern 2
+        // let n = 5;
+        // str = ''
+        // for (let i = 0; i < n; i++) {
+        //     for (let j = 0; j <= i; j++) {
+        //         str = str + "* "
+        //     }
+        //     str = str + "<br/>"
+        // }
+        // document.write(str)
+        //-----------------------------------------------------------------------
+
+
+        //pattern 3
+        // let n = 5;
+        // str = ''
+        // for (let i = 0; i < n; i++) {
+        //     for (let j = 0; j < n - i; j++) {
+        //         str = str + "* "
+        //     }
+        //     str = str + "<br/>"
+        // }
+        // document.write(str)
+        //-----------------------------------------------------------------------
+
+        //pattern 4
+        // let n = 5;
+        // let str = '';
+        // for (let i = 1; i <= n; i++) {
+        //     for (let j = 1; j <= n - i; j++) {
+        //         str = str + "  "
+        //     }
+        //     for (let k = 1; k <= i; k++) {
+        //         str = str + '* '
+        //     }
+        //     str = str + "\n"
+        // }
+        // document.getElementById("output").textContent = str;
+        //-----------------------------------------------------------------------
+
+        // Pattern 5
+        // let n = 5;
+        // let str = '';
+        // for (let i = 0; i < n; i++) {
+        //     for (let j = 0; j < n - i; j++) {
+        //         str = str + '0 '
+        //     }
+        //     for (let k = 0; k < ; k++) {
+        //         str = str + '*'
+        //     }
+        //     str = str + '\n'
+        // }
+        // document.getElementById("output").textContent = str;
+        //-----------------------------------------------------------------------
+
+        //pattern 6
+        // let n = 5;
+        // let str = '';
+        // for (let i = 0; i < n; i++) {
+        //     for (let j = 0; j < i; j++) {
+        //         str = str + '_ '
+        //     }
+        //     for (let k = 0; k < n - i; k++) {
+        //         str = str + '* '
+        //     }
+        //     str = str + '<br/>'
+        // }
+        // document.write(str)
+        //-----------------------------------------------------------------------
+
+
+        //pattern 7
+        // let n = 5;
+        // let str = '';
+        // for (let i = 0; i < n; i++) {
+        //     for (let j = 0; j < n - i; j++) {
+        //         str = str + '* '
+        //     }
+        //     for (let k = 0; k < i; k++) {
+        //         str = str + '_ '
+        //     }
+        //     for (let l = 1; l < i; l++) {
+        //         str = str + '_ '
+        //     }
+        //     // for (let m = 0; m < 1; m++) {
+        //     //     str = str + '* '
+        //     // }
+
+        //     str = str + '<br/>'
+        // }
+        // document.write(str)
+        //-----------------------------------------------------------------------
+
+        // pattern 8
+        // let n = 5;
+        // let str = '';
+        // for (let i = 0; i < 5; i++) {
+        //     for (let j = 0; j < 1; j++) {
+        //         str = str + 'X '
+        //     }
+        //     for (let k = 0; k < 1; k++) {
+        //         if (i == 1 || i == 3 || i == 4) {
+        //             str = str + '_. '
+        //         } else {
+        //             str = str + 'X'
+        //         }
+        //     }
+        //     for (let L = 0; L < 1; L++) {
+        //         if (i == 3 || i == 4) {
+        //             str = str + '_ '
+        //         } else {
+        //             str = str + 'X '
+        //         }
+        //     }
+        //     str = str + '<br/>'
+        // }
+
+        // document.write(str)
+        //-----------------------------------------------------------------------
+
+        //name Pattern
+        let n = 5;
+        let str = '';
+
+        // for (let i = 0; i < n; i++) {
+        //     str = str + i
+        //     for (let j = 0; j < n; j++) {
+        //         str = str + j
+        //     }
+        //     str = str + '\n'
+        // }
+
+        for (let i = 0; i < n; i++) {
+            //for letter p
+            for (let j = 0; j < 3; j++) {
+                if (i == 1 && j == 1 || i == 3 && j > 0 || i == 4 && j > 0) {
+                    str = str + "  ";
+                } else {
+                    str = str + "* "
+                }
+            }
+
+            for (let a = 0; a < 1; a++) {
+                str = str + '  '
+            }
+
+            //for letter u
+            for (let j = 0; j < 3; j++) {
+                if (i < 4 && j == 1) {
+                    str = str + "  ";
+                } else {
+                    str = str + "* "
+                }
+            }
+
+            for (let a = 0; a < 1; a++) {
+                str = str + '  '
+            }
+
+            //letter N
+            for (let j = 0; j < 6; j++) {
+                if (i > 0 && j == 1 || i == 0 && j == 2 || i > 1 && j == 2 || i > 2 && j == 3 || i < 2 && j == 3 || i < 3 && j == 4 || i == 4 && j == 4) {
+                    str = str + " "
+                } else {
+                    str = str + "*"
+                }
+            }
+
+            for (let a = 0; a < 1; a++) {
+                str = str + '  '
+            }
+
+            // for letter I
+            for (let j = 0; j < 3; j++) {
+                if ((i > 0 && i < 4) && j == 0 || (i > 0 && i < 4) && j == 2) {
+                    str = str + "  ";
+                } else {
+                    str = str + "* "
+                }
+            }
+
+            for (let a = 0; a < 1; a++) {
+                str = str + '  '
+            }
+
+            // for letter T
+            for (let j = 0; j < 3; j++) {
+                if (i > 0 && j == 0 || i > 0 && j == 2) {
+                    str = str + "  ";
+                } else {
+                    str = str + "* "
+                }
+            }
+
+            str = str + '\n'
+        }
+        document.getElementById("output").textContent = str;
+
+
+        //hollow rectangle
+        // let n = 6;
+        // let str = '';
+
+        // for (let i = 0; i < n; i++) {
+        //     for (let j = 0; j < n; j++) {
+        //         if ((i > 0 && i < 5) &&( j > 0 && j < 5)) {
+        //             str = str + '  '
+        //         } else {
+        //             str = str + '* '
+        //         }
+        //     }
+        //     str = str + '\n'
+        // }
+
+        // document.getElementById("output").textContent = str;
+
+        // triangle
+        // let n = 4;
+        // let str = '';
+        // for (let i = 0; i < n; i++) {
+        //     for (let j = 1; j < n - i; j++) {
+        //         str = str + "  "
+        //     }
+        //     for (let k = 0; k < i + 1; k++) {
+        //         str = str + "* "
+        //     }
+        //     for (let k = 0; k < i ; k++) {
+        //         str = str + "* "
+        //     }
+        //     str = str + '\n'
+        // }
+        // document.getElementById("output").textContent = str;
+
+
+        //inverted triangle
+        // let n = 4;
+        // let str = '';
+        // document.getElementById("output").textContent = str;
+
+        // for (let i = 0; i < n; i++) {
+        //     for (let j = 0; j < i; j++) {
+        //         str = str + '  '
+        //     }
+        //     for (let j = 1; j < n - i; j++) {
+        //         str = str + '* '
+        //     }
+        //     for (let k = 0; k < n - i; k++) {
+        //         str = str + '* '
+        //     }
+        //     str = str + '\n'
+        // }
+
+        // document.getElementById("output").textContent = str
+    </script>
+</body>
+
+</html>
